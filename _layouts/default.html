@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="sidebar">
-        <div class="profile-section">
-            <img src="https://github.com/mishanmandal.png" alt="Mishan" class="avatar">
-            <h2>Mishan's Journal</h2>
-            <p>MBBS Student | Tech Enthusiast</p>
-        </div>
-        <div class="links">
-            <a href="/">Home</a>
-            <a href="https://github.com/mishanmandal">My GitHub</a>
-        </div>
-    </nav>
+    <div class="layout-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <div class="avatar-circle">M</div>
+                <h3>Mishan Mandal</h3>
+                <p class="role">MBBS Student</p>
+            </div>
+            <nav>
+                <a href="{{ '/' | relative_url }}" class="nav-link">Journal Entries</a>
+                <a href="https://github.com/mishan-dr" class="nav-link">GitHub Profile</a>
+            </nav>
+        </aside>
 
-    <main class="content">
-        <h1>{{ page.title }}</h1>
-        <div class="date">{{ page.date | date: "%B %d, %Y" }}</div>
-
-        {{ content }}
-    </main>
+        <main class="main-content">
+            {{ content }}
+        </main>
+    </div>
 
 </body>
 </html>
