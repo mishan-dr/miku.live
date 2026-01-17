@@ -1,113 +1,120 @@
-/* MODERN PROFESSIONAL THEME */
 :root {
-    --primary: #2563eb; /* Professional Blue */
-    --text-main: #1f2937;
-    --text-light: #6b7280;
-    --bg-sidebar: #f8fafc;
-    --bg-main: #ffffff;
-    --border: #e2e8f0;
+    --primary: #0052cc; /* Professional Medical Blue */
+    --text-dark: #172b4d;
+    --text-gray: #6b778c;
+    --bg-gray: #f4f5f7;
+    --white: #ffffff;
+    --border: #dfe1e6;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.layout-container {
     display: flex;
     min-height: 100vh;
-    color: var(--text-main);
 }
 
-/* SIDEBAR - Clean & Minimal */
+/* SIDEBAR DESIGN */
 .sidebar {
-    width: 280px;
-    background-color: var(--bg-sidebar);
+    width: 260px;
+    background-color: var(--bg-gray);
     border-right: 1px solid var(--border);
-    padding: 40px 30px;
-    position: fixed;
+    padding: 40px 20px;
+    flex-shrink: 0;
+    position: fixed; /* Keeps sidebar sticky */
     height: 100%;
+}
+
+.avatar-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 12px; /* Modern rounded corners */
-    object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar h2 {
-    font-size: 1.25rem;
+.profile h3 {
+    margin: 0;
+    font-size: 18px;
     font-weight: 700;
-    margin: 0 0 5px 0;
 }
 
-.sidebar p {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    margin: 0 0 30px 0;
+.role {
+    margin: 5px 0 30px 0;
+    color: var(--text-gray);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.links a {
+.nav-link {
     display: block;
-    color: var(--text-light);
     text-decoration: none;
+    color: var(--text-dark);
     padding: 10px 0;
-    font-size: 0.95rem;
+    font-weight: 500;
     transition: color 0.2s;
     border-bottom: 1px solid transparent;
 }
 
-.links a:hover {
+.nav-link:hover {
     color: var(--primary);
     border-bottom: 1px solid var(--border);
 }
 
-/* MAIN CONTENT - Readable & Spacious */
-.content {
-    margin-left: 280px; /* Push content to right of sidebar */
+/* MAIN CONTENT DESIGN */
+.main-content {
+    margin-left: 260px; /* Same width as sidebar */
     padding: 60px 80px;
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
-    line-height: 1.8; /* Better reading experience */
 }
 
-/* TYPOGRAPHY */
+/* HEADINGS & TEXT */
 h1 {
+    font-family: 'Merriweather', serif; /* Elegant font for titles */
     font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.025em;
+    color: var(--text-dark);
     margin-bottom: 0.5rem;
-    color: #111;
+    line-height: 1.2;
 }
 
-.date {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 40px;
-    display: block;
+.date-tag {
+    display: inline-block;
+    background: #e6effc;
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
-/* Post Content Styling */
-p { margin-bottom: 1.5rem; font-size: 1.1rem; }
-strong { color: #000; font-weight: 600; }
-blockquote {
-    border-left: 4px solid var(--primary);
-    padding-left: 20px;
-    color: var(--text-light);
-    font-style: italic;
-    background: #f9f9f9;
-    padding: 15px;
+p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 24px;
 }
-img { max-width: 100%; border-radius: 8px; }
 
-/* Mobile Response */
-@media (max-width: 768px) {
-    body { flex-direction: column; }
-    .sidebar { position: relative; width: auto; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
-    .content { margin-left: 0; padding: 30px 20px; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* LIST OF POSTS (HOMEPAGE) */
+.post-preview {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
 }
